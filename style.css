@@ -33,11 +33,16 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Cairo', 'Tajawal', sans-serif;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
   min-height: 100dvh;
   overflow: hidden;
   position: relative;
   direction: rtl;
+  text-align: center;
+  letter-spacing: 0;
+  word-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ---------- Stars Canvas ---------- */
