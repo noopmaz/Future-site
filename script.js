@@ -175,23 +175,20 @@ function getRandomMessage() {
 /* ---------- Typewriter effect ---------- */
 function typewrite(element, text, speed = 38) {
   return new Promise(resolve => {
-    element.innerHTML = '<span class="cursor"></span>';
+    element.innerHTML = '';
+    
     let i = 0;
-    const chars = [...text];
-    const cursor = element.querySelector('.cursor');
 
     function step() {
-      if (i < chars.length) {
-        cursor.insertAdjacentText('beforebegin', chars[i++]);
+      if (i < text.length) {
+        element.textContent += text[i];
+        i++;
         setTimeout(step, speed + (Math.random() * 20 - 10));
       } else {
-        // Remove cursor after typing
-        setTimeout(() => {
-          cursor.remove();
-          resolve();
-        }, 600);
+        resolve();
       }
     }
+
     step();
   });
 }
