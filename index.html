@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="رسالة من نفسك في 2027 — اكتشف ما ينتظرك" />
+  <meta property="og:title" content="رسالة من مستقبلك في 2027" />
+  <meta property="og:description" content="رسالة شخصية جاءت من نسخة أنت في العام 2027" />
+  <meta property="og:type" content="website" />
+  <title>رسالة من مستقبلك · 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Stars canvas -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- Animated gradient orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- First visit welcome overlay -->
+  <div id="welcome-overlay" class="hidden">
+    <div class="welcome-box">
+      <div class="welcome-icon">✦</div>
+      <p class="welcome-text">أهلًا بك أول مرة<br/><span>الوقت لم يأتِ بعد — لكنه في الطريق</span></p>
+      <button id="welcome-close" class="btn-close">دخول</button>
+    </div>
+  </div>
+
+  <!-- Main app -->
+  <main id="app">
+
+    <!-- Landing screen -->
+    <section id="screen-home" class="screen active">
+      <div class="home-inner">
+        <div class="year-badge">2 0 2 7</div>
+        <h1 class="main-title">رسالة من<br/><em>نفسك</em></h1>
+        <p class="sub-title">تخيّل لو أرسل مستقبلك كلمة واحدة لحاضرك.<br/>هذه هي تلك الكلمة.</p>
+        <button id="btn-receive" class="btn-main">
+          <span class="btn-label">استقبل الرسالة</span>
+          <span class="btn-glow"></span>
+        </button>
+        <p class="visit-count" id="visit-count"></p>
+      </div>
+    </section>
+
+    <!-- Loading screen -->
+    <section id="screen-loading" class="screen">
+      <div class="loading-inner">
+        <div class="signal-ring"></div>
+        <div class="signal-ring delay-1"></div>
+        <div class="signal-ring delay-2"></div>
+        <p class="loading-text" id="loading-text">جاري الاتصال بمستقبلك…</p>
+      </div>
+    </section>
+
+    <!-- Message screen -->
+    <section id="screen-message" class="screen">
+      <div class="message-inner">
+        <div class="msg-card" id="msg-card">
+          <div class="msg-meta">
+            <span class="msg-from">من: أنت · 2027</span>
+            <span class="msg-dot">●</span>
+            <span class="msg-status">مُرسَلة</span>
+          </div>
+          <p class="msg-text" id="msg-text"></p>
+          <div class="msg-signature">— نسختك القادمة</div>
+        </div>
+
+        <div class="action-row">
+          <button class="action-btn" id="btn-another" title="رسالة أخرى">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 .49-4.64"></path>
+            </svg>
+            <span>أخرى</span>
+          </button>
+          <button class="action-btn" id="btn-copy" title="نسخ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>نسخ</span>
+          </button>
+          <button class="action-btn" id="btn-share" title="مشاركة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>مشاركة</span>
+          </button>
+          <button class="action-btn" id="btn-save" title="حفظ كصورة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>حفظ</span>
+          </button>
+        </div>
+
+        <button id="btn-back" class="btn-back">العودة للبداية</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
